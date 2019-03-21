@@ -63,10 +63,13 @@ extern char*    hello();
 extern int    m_mod(int n, int m);
 </pre>
 
-swig -python example2.i
+### generate swig files
 
-gcc -fPIC -c example2_wrap.c -I ~/dev/py_venv/test_swig/include/python2.7
+`swig -python example2.i`
 
-export DYLD_LIBRARY_PATH='/Users/moment/CLionProjects/swig_example/'
+### build
+`gcc -fPIC -c example2_wrap.c -I ~/dev/py_venv/test_swig/include/python2.7`
 
-gcc -lpython2.7 -dynamiclib ../output/lib/libexample2.dylib example2_wrap.o -o _example2.so
+`export DYLD_LIBRARY_PATH='/Users/moment/CLionProjects/swig_example/'`
+
+`gcc -lpython2.7 -dynamiclib ../output/lib/libexample2.dylib example2_wrap.o -o _example2.so`
